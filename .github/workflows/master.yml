@@ -3,7 +3,7 @@ name: Build & Publish
 on:
   push:
     branches:
-      - root
+      - master
 
 jobs:
   build:
@@ -24,6 +24,9 @@ jobs:
 
         with:
           dependency-graph: generate-and-submit
+
+      - name: Make sure gradlew is executable
+        run: "chmod +x ./gradlew"
 
       - name: Gradle (Build)
         run: "./gradlew build"

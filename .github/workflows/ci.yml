@@ -3,7 +3,7 @@ name: Build (CI)
 on:
   push:
     branches-ignore:
-      - root
+      - master
       - develop
 
   pull_request:
@@ -24,6 +24,9 @@ jobs:
 
       - name: Gradle (Setup)
         uses: gradle/actions/setup-gradle@v3
+
+      - name: Make sure gradlew is executable
+        run: "chmod +x ./gradlew"
 
       - name: Gradle (Build)
         run: "./gradlew build"
