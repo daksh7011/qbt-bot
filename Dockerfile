@@ -6,9 +6,7 @@ FROM openjdk:21-jdk-slim
 RUN mkdir -p /bot/plugins
 RUN mkdir -p /bot/data
 
-WORKDIR /builder
-
-COPY [ "build/libs/qbt-bot-*-all.jar", "/bot/bot.jar" ]
+COPY [ "/builder/build/libs/qbt-bot-*-all.jar", "/bot/bot.jar" ]
 
 WORKDIR /bot
 
