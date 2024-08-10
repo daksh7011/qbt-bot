@@ -14,16 +14,16 @@ const val API_VERSION = "v2"
 val BASE_URL get() = "${env(Environment.BASE_URL)}/api/$API_VERSION"
 
 val httpClient = HttpClient {
-	install(HttpCookies)
-	install(ContentNegotiation) {
-		json(
-			Json {
-				prettyPrint = true
-				isLenient = true
-				ignoreUnknownKeys = true
-			},
-		)
-	}
+    install(HttpCookies)
+    install(ContentNegotiation) {
+        json(
+            Json {
+                prettyPrint = true
+                isLenient = true
+                ignoreUnknownKeys = true
+            },
+        )
+    }
 }
 
 fun String.encodeQuery(): String = URLEncoder.encode(this, "utf-8")

@@ -2,78 +2,78 @@ import dev.kordex.gradle.plugins.docker.file.*
 import dev.kordex.gradle.plugins.kordex.DataCollection
 
 plugins {
-	kotlin("jvm")
-	kotlin("plugin.serialization")
+    kotlin("jvm")
+    kotlin("plugin.serialization")
 
-	id("com.github.johnrengelman.shadow")
-	id("io.gitlab.arturbosch.detekt")
+    id("com.github.johnrengelman.shadow")
+    id("io.gitlab.arturbosch.detekt")
 
-	id("dev.kordex.gradle.docker")
-	id("dev.kordex.gradle.kordex")
+    id("dev.kordex.gradle.docker")
+    id("dev.kordex.gradle.kordex")
 }
 
-group = "template"
-version = "1.0-SNAPSHOT"
+group = "qbt-bot"
+version = "1.0"
 
 dependencies {
-	detektPlugins(libs.detekt)
+    detektPlugins(libs.detekt)
 
-	implementation(libs.kotlin.stdlib)
-	implementation(libs.kx.ser)
+    implementation(libs.kotlin.stdlib)
+    implementation(libs.kx.ser)
 
-	// Logging dependencies
-	implementation(libs.groovy)
-	implementation(libs.jansi)
-	implementation(libs.logback)
-	implementation(libs.logback.groovy)
-	implementation(libs.logging)
+    // Logging dependencies
+    implementation(libs.groovy)
+    implementation(libs.jansi)
+    implementation(libs.logback)
+    implementation(libs.logback.groovy)
+    implementation(libs.logging)
 }
 
 kordEx {
-	bot {
-		// See https://docs.kordex.dev/data-collection.html
-		dataCollection(DataCollection.None)
+    bot {
+        // See https://docs.kordex.dev/data-collection.html
+        dataCollection(DataCollection.None)
 
-		mainClass = "qbtbot.AppKt"
-	}
+        mainClass = "qbtbot.AppKt"
+    }
 }
 
 detekt {
-	buildUponDefaultConfig = true
+    buildUponDefaultConfig = true
 
-	config.from(rootProject.files("detekt.yml"))
+    config.from(rootProject.files("detekt.yml"))
 }
 
 // Automatically generate a Dockerfile. Set `generateOnBuild` to `false` if you'd prefer to manually run the
 // `createDockerfile` task instead of having it run whenever you build.
 docker {
-	// Create the Dockerfile in the root folder.
-	file(rootProject.file("Dockerfile"))
+    // Create the Dockerfile in the root folder.
+    file(rootProject.file("Dockerfile"))
 
-	commands {
-		// Each function (aside from comment/emptyLine) corresponds to a Dockerfile instruction.
-		// See: https://docs.docker.com/reference/dockerfile/
+    commands {
+        // Each function (aside from comment/emptyLine) corresponds to a Dockerfile instruction.
+        // See: https://docs.docker.com/reference/dockerfile/
 
-		from("openjdk:21-jdk-slim")
+        from("openjdk:21-jdk-slim")
 
-		emptyLine()
+        emptyLine()
 
-		runShell("mkdir -p /bot/plugins")
-		runShell("mkdir -p /bot/data")
+        runShell("mkdir -p /bot/plugins")
+        runShell("mkdir -p /bot/data")
 
-		emptyLine()
+        emptyLine()
 
-		copy("build/libs/$name-*-all.jar", "/bot/bot.jar")
+        copy("build/libs/$name-*-all.jar", "/bot/bot.jar")
 
-		emptyLine()
+        emptyLine()
 
-		workdir("/bot")
+        workdir("/bot")
 
-		emptyLine()
+        emptyLine()
 
-		entryPointExec(
-			"java", "-Xms2G", "-Xmx2G",
-			"-jar", "/bot/bot.jar"
-		)
-	}
+        entryPointExec(
+            "java", "-Xms2G", "-Xmx2G",
+            "-jar", "/bot/bot.jar"
+        )
+    }
 }
