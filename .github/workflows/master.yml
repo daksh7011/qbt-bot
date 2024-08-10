@@ -42,7 +42,7 @@ jobs:
           path: build/libs/*.jar
 
       - name: Debug directory
-        run: pwd; ls -R
+        run: pwd; ls -la
 
       - name: Copy downloaded artifacts to . for Dockerfile compatibility
         run: cp -av build/libs/* .
@@ -60,7 +60,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Debug directory again
-        run: pwd; ls -R
+        run: pwd; ls -la
 
       - name: Build and push
         uses: docker/build-push-action@v6
