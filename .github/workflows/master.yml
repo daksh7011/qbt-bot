@@ -41,12 +41,6 @@ jobs:
           name: JARs
           path: build/libs/*.jar
 
-      - name: Debug directory
-        run: pwd; ls -la
-
-      - name: Copy downloaded artifacts to . for Dockerfile compatibility
-        run: cp -av build/libs/* .
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
@@ -58,9 +52,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Debug directory again
-        run: pwd; ls -la
 
       - name: Build and push
         uses: docker/build-push-action@v6
