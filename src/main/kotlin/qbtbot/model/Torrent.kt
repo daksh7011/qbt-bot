@@ -1,111 +1,110 @@
 package qbtbot.model
 
-
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class Torrent(
-	@SerialName("added_on")
+    @SerialName("added_on")
     val addedOn: Int,
-	@SerialName("amount_left")
+    @SerialName("amount_left")
     val amountLeft: Double,
-	@SerialName("auto_tmm")
+    @SerialName("auto_tmm")
     val autoTmm: Boolean,
-	@SerialName("availability")
+    @SerialName("availability")
     val availability: Double,
-	@SerialName("category")
+    @SerialName("category")
     val category: String,
-	@SerialName("completed")
+    @SerialName("completed")
     val completed: Long,
-	@SerialName("completion_on")
+    @SerialName("completion_on")
     val completionOn: Int,
-	@SerialName("content_path")
+    @SerialName("content_path")
     val contentPath: String,
-	@SerialName("dl_limit")
+    @SerialName("dl_limit")
     val dlLimit: Int,
-	@SerialName("dlspeed")
+    @SerialName("dlspeed")
     val downSpeed: Int,
-	@SerialName("download_path")
+    @SerialName("download_path")
     val downloadPath: String,
-	@SerialName("downloaded")
+    @SerialName("downloaded")
     val downloaded: Long,
-	@SerialName("downloaded_session")
+    @SerialName("downloaded_session")
     val downloadedSession: Int,
-	@SerialName("eta")
+    @SerialName("eta")
     val eta: Double,
-	@SerialName("f_l_piece_prio")
+    @SerialName("f_l_piece_prio")
     val firstLastPiecePriority: Boolean,
-	@SerialName("force_start")
+    @SerialName("force_start")
     val forceStart: Boolean,
-	@SerialName("hash")
+    @SerialName("hash")
     val hash: String,
-	@SerialName("inactive_seeding_time_limit")
+    @SerialName("inactive_seeding_time_limit")
     val inactiveSeedingTimeLimit: Int,
-	@SerialName("infohash_v1")
+    @SerialName("infohash_v1")
     val infoHashV1: String,
-	@SerialName("infohash_v2")
+    @SerialName("infohash_v2")
     val infoHashV2: String,
-	@SerialName("last_activity")
+    @SerialName("last_activity")
     val lastActivity: Int,
-	@SerialName("magnet_uri")
+    @SerialName("magnet_uri")
     val magnetUri: String,
-	@SerialName("max_inactive_seeding_time")
+    @SerialName("max_inactive_seeding_time")
     val maxInactiveSeedingTime: Int,
-	@SerialName("max_ratio")
+    @SerialName("max_ratio")
     val maxRatio: Int,
-	@SerialName("max_seeding_time")
+    @SerialName("max_seeding_time")
     val maxSeedingTime: Int,
-	@SerialName("name")
+    @SerialName("name")
     val name: String,
-	@SerialName("num_complete")
+    @SerialName("num_complete")
     val numComplete: Int,
-	@SerialName("num_incomplete")
+    @SerialName("num_incomplete")
     val numIncomplete: Int,
-	@SerialName("num_leechs")
+    @SerialName("num_leechs")
     val numLeech: Int,
-	@SerialName("num_seeds")
+    @SerialName("num_seeds")
     val numSeed: Int,
-	@SerialName("priority")
+    @SerialName("priority")
     val priority: Int,
-	@SerialName("progress")
+    @SerialName("progress")
     val progress: Double,
-	@SerialName("ratio")
+    @SerialName("ratio")
     val ratio: Double,
-	@SerialName("ratio_limit")
+    @SerialName("ratio_limit")
     val ratioLimit: Int,
-	@SerialName("save_path")
+    @SerialName("save_path")
     val savePath: String,
-	@SerialName("seeding_time")
+    @SerialName("seeding_time")
     val seedingTime: Double,
-	@SerialName("seeding_time_limit")
+    @SerialName("seeding_time_limit")
     val seedingTimeLimit: Int,
-	@SerialName("seen_complete")
+    @SerialName("seen_complete")
     val seenComplete: Int,
-	@SerialName("seq_dl")
+    @SerialName("seq_dl")
     val sequentialDownload: Boolean,
-	@SerialName("size")
+    @SerialName("size")
     val size: Double,
-	@SerialName("state")
+    @SerialName("state")
     val state: String,
-	@SerialName("super_seeding")
+    @SerialName("super_seeding")
     val superSeeding: Boolean,
-	@SerialName("tags")
+    @SerialName("tags")
     val tags: String,
-	@SerialName("time_active")
+    @SerialName("time_active")
     val timeActive: Int,
-	@SerialName("total_size")
+    @SerialName("total_size")
     val totalSize: Double,
-	@SerialName("tracker")
+    @SerialName("tracker")
     val tracker: String,
-	@SerialName("trackers_count")
+    @SerialName("trackers_count")
     val trackersCount: Int,
-	@SerialName("up_limit")
+    @SerialName("up_limit")
     val upLimit: Int,
-	@SerialName("uploaded")
+    @SerialName("uploaded")
     val uploaded: Long,
-	@SerialName("uploaded_session")
+    @SerialName("uploaded_session")
     val uploadedSession: Int,
-	@SerialName("upspeed")
+    @SerialName("upspeed")
     val upSpeed: Int
 )
