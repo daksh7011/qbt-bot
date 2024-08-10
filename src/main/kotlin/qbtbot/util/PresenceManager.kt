@@ -10,6 +10,7 @@ import kotlin.math.floor
 object PresenceManager : KoinComponent {
 
     private val scheduler = Scheduler()
+    private const val REFRESH_TIMEOUT = 60L
 
     suspend fun setPresence(kord: Kord) {
         callScheduler(kord)
@@ -18,7 +19,7 @@ object PresenceManager : KoinComponent {
     private suspend fun callScheduler(kord: Kord) {
         val listOfPresence = getPresenceList(kord)
         scheduler.schedule(
-            60L,
+            REFRESH_TIMEOUT,
             callback = {
                 kord.editPresence(listOfPresence[floor(Math.random() * listOfPresence.size).toInt()])
                 callScheduler(kord)

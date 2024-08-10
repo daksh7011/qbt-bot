@@ -22,19 +22,18 @@ suspend fun Kord.prepareEmbed(): EmbedBuilder.Footer = EmbedBuilder.Footer().app
     icon = getUser(selfId)?.avatar?.cdnUrl?.toUrl()
 }
 
-fun String?.bold(): String {
-    return "**$this**"
-}
+fun String?.bold(): String = "**$this**"
 
-fun String?.italic(): String {
-    return "*$this*"
-}
+fun String?.italic(): String = "*$this*"
 
 suspend fun ExtensibleBot.loginToBackend() {
     // try to log in to qBitTorrent
-    val response = httpClient.submitForm("$BASE_URL/auth/login", formParameters = parameters {
-        append("username", env(Environment.USERNAME))
-        append("password", env(Environment.PASSWORD))
-    })
+    val response = httpClient.submitForm(
+        url = "$BASE_URL/auth/login",
+        formParameters = parameters {
+            append("username", env(Environment.USERNAME))
+            append("password", env(Environment.PASSWORD))
+        }
+    )
     logger.info { "qBitTorrent login -> status: ${response.status}" }
 }

@@ -1,6 +1,5 @@
 package qbtbot.model
 
-
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

@@ -22,7 +22,6 @@ import qbtbot.util.testGuild
 // inv link: https://discord.com/oauth2/authorize?client_id=1271843928060203031&permissions=563364418284608&integration_type=0&scope=bot
 
 suspend fun main() {
-
     val bot = ExtensibleBot(env(Environment.TOKEN)) {
         chatCommands {
             defaultPrefix = env(Environment.PREFIX)
@@ -108,4 +107,3 @@ suspend fun main() {
 
     bot.start()
 }
-
