@@ -49,7 +49,7 @@ detekt {
 docker {
     // Create the Dockerfile in the root folder.
     file(rootProject.file("Dockerfile"))
-
+    generateOnBuild=false
     commands {
         // Each function (aside from comment/emptyLine) corresponds to a Dockerfile instruction.
         // See: https://docs.docker.com/reference/dockerfile/
