@@ -63,6 +63,10 @@ docker {
 
         emptyLine()
 
+        workdir("/builder")
+
+        emptyLine()
+
         copy("build/libs/$name-*-all.jar", "/bot/bot.jar")
 
         emptyLine()
