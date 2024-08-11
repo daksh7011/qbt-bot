@@ -3,17 +3,11 @@ _extends: ".github"
 # Enable "labeler" for your PR that would add labels to PRs based on the paths that are modified in the PR.
 labelPRBasedOnFilePath:
   commands:
-    - src/main/kotlin/qbtbot/commands/*
-  CI:
-    - .github/*
+    - src/main/kotlin/qbtbot/commands/**/*
+  ci:
+    - .github/**/*
   dependency:
     - gradle/libs.version.toml
-# Various Flags to control behaviour of the "Labeler"
-labelerFlags:
-  # If this flag is changed to 'false', labels would only be added when the PR is first created and not when existing
-  # PR is updated.
-  # The default is 'true' which means the labels would be added when PR is updated even if they were removed by the user
-  labelOnPRUpdates: true
 
 ##### Greetings ########################################################################################################
 # Comment to be posted to welcome users when they open their first PR
