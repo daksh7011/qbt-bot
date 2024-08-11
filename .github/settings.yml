@@ -44,6 +44,13 @@ labels:
     color: CC0000
   - name: feature
     color: 336699
+  - name: commands
+    color: 1D76DB
+  - name: CI
+    color: 1D76DB
+  - name: dependency
+    color: 1D76DB
+  - name: maintenance
+    color: 1D76DB
   - name: first-timers-only
-    # include the old name to rename and existing label
     oldname: Help Wanted
