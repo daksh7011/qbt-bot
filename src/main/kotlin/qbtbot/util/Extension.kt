@@ -8,6 +8,7 @@ import dev.kord.core.entity.Message
 import dev.kord.rest.builder.message.EmbedBuilder
 import io.ktor.client.request.forms.submitForm
 import io.ktor.http.parameters
+import kotlin.math.round
 
 val testGuild: Snowflake get() = Snowflake(env(Environment.TEST_GUILD_ID).toLong())
 
@@ -36,4 +37,10 @@ suspend fun ExtensibleBot.loginToBackend() {
         }
     )
     logger.info { "qBitTorrent login -> status: ${response.status}" }
+}
+
+fun Double.round(decimals: Int = 2): Double {
+    var multiplier = 1.0
+    repeat(decimals) { multiplier *= 10 }
+    return round(this * multiplier) / multiplier
 }
