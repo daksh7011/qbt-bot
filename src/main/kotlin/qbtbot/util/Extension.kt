@@ -16,9 +16,9 @@ fun Message.isBot(): Boolean = author?.isBot != false
 fun Message.isNotBot(): Boolean = isBot().not()
 fun Snowflake.isOwner(): Boolean = toString() == env(Environment.OWNER_ID)
 
-suspend fun Message.getEmbedFooter(): EmbedBuilder.Footer = this.kord.prepareEmbed()
+suspend fun Message.getEmbedFooter(): EmbedBuilder.Footer = this.kord.prepareEmbedFooter()
 
-suspend fun Kord.prepareEmbed(): EmbedBuilder.Footer = EmbedBuilder.Footer().apply {
+suspend fun Kord.prepareEmbedFooter(): EmbedBuilder.Footer = EmbedBuilder.Footer().apply {
     text = "Powered by ${getUser(selfId)?.username}"
     icon = getUser(selfId)?.avatar?.cdnUrl?.toUrl()
 }
@@ -39,6 +39,7 @@ suspend fun ExtensibleBot.loginToBackend() {
     logger.info { "qBitTorrent login -> status: ${response.status}" }
 }
 
+@Suppress("MagicNumber")
 fun Double.round(decimals: Int = 2): Double {
     var multiplier = 1.0
     repeat(decimals) { multiplier *= 10 }
