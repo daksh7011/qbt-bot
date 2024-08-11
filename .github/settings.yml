@@ -43,7 +43,7 @@ labels:
   - name: bug
     color: CC0000
   - name: feature
-    color: 336699
+    color: 0E8A16
   - name: commands
     color: 1D76DB
   - name: CI
@@ -52,5 +52,11 @@ labels:
     color: 1D76DB
   - name: maintenance
     color: 1D76DB
+  - name: major
+    color: fbca04
+  - name: minor
+    color: fbca04
+  - name: patch
+    color: fbca04
   - name: first-timers-only
     oldname: Help Wanted
