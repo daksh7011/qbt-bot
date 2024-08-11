@@ -1,4 +1,4 @@
-name: Build & Publish
+name: Build Master & Publish
 
 on:
   push:
@@ -58,6 +58,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.repository }}:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.nam }}:latest
           outputs: |
             type=local,dest=.
