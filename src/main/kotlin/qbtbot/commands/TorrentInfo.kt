@@ -11,6 +11,7 @@ import qbtbot.util.bold
 import qbtbot.util.httpClient
 import qbtbot.util.round
 
+@Suppress("MagicNumber") // TODO: Remove
 class TorrentInfo : Extension() {
     override val name: String = "Torrent Info"
     override suspend fun setup() {
