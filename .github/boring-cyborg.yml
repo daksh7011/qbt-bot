@@ -3,7 +3,7 @@ _extends: ".github"
 # Enable "labeler" for your PR that would add labels to PRs based on the paths that are modified in the PR.
 labelPRBasedOnFilePath:
   commands:
-    - src/main/qbtbot/commands
+    - src/main/qbtbot/commands/**/*
   CI:
     - .github/**/*
   dependency:
