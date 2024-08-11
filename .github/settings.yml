@@ -6,7 +6,7 @@ repository:
   name: qbt-bot
 
   # A short description of the repository that will show up on GitHub
-  description: Simple discord bot built around qBitTorrent REST API. Built with Kotlin
+  description: Simple discord bot built around qBitTorrent REST API. Built with Kotlin.
 
   # A URL with more information about the repository
   homepage: https://github.com/daksh7011/qbt-bot
