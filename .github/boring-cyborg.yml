@@ -3,9 +3,9 @@ _extends: ".github"
 # Enable "labeler" for your PR that would add labels to PRs based on the paths that are modified in the PR.
 labelPRBasedOnFilePath:
   commands:
-    - src/main/kotlin/qbtbot/commands/**/*
+    - src/main/kotlin/qbtbot/commands/*
   CI:
-    - .github/**/*
+    - .github/*
   dependency:
     - gradle/libs.version.toml
 # Various Flags to control behaviour of the "Labeler"
