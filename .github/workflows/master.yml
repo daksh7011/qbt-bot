@@ -58,6 +58,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: user/app:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.repository }}:latest
           outputs: |
             type=local,dest=.
