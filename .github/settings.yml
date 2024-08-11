@@ -46,7 +46,7 @@ labels:
     color: 0E8A16
   - name: commands
     color: 1D76DB
-  - name: CI
+  - name: ci
     color: 1D76DB
   - name: dependency
     color: 1D76DB

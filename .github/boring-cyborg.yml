@@ -4,7 +4,7 @@ _extends: ".github"
 labelPRBasedOnFilePath:
   commands:
     - src/main/kotlin/qbtbot/commands/*
-  CI:
+  ci:
     - .github/*
   dependency:
     - gradle/libs.version.toml
