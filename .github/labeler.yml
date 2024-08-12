@@ -20,6 +20,11 @@ feature:
 fix:
   - head-branch: ['^fix', 'fix']
 
+# Add 'maintenance' label to any PR where the head branch name
+# starts with `chore, maintenance` or has a `fix, maintenance` section in the name
+maintenance:
+  - head-branch: ['^maintenance', 'maintenance','^chore', 'chore']
+
 # Add 'release' label to any PR that is opened against the `master` branch
 release:
   - base-branch: 'master'

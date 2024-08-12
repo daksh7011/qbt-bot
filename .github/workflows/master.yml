@@ -8,12 +8,24 @@ on:
 jobs:
   build-master:
     permissions:
+      contents: write
       pull-requests: write
 
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Release Drafter
+        id: release_drafter
+        uses: release-drafter/release-drafter@v6
+        with:
+          disable-releaser: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set version to env
+        run: echo "VERSION=$(echo ${{steps.release_drafter.outputs.tag_name}})" >> $GITHUB_ENV
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -65,12 +77,6 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:latest
           outputs: |
             type=local,dest=.
-
-      - name: Release Drafter
-        id: release_drafter
-        uses: release-drafter/release-drafter@v6
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Release Tag
         uses: softprops/action-gh-release@v2
