@@ -29,7 +29,7 @@ suspend fun main() {
             prefix { default ->
                 if (guildId == testGuild) {
                     // For the test server, we use ! as the command prefix
-                    "!"
+                    "dev"
                 } else {
                     // For other servers, we use the configured default prefix
                     default
