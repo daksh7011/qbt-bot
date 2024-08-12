@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Torrent(
     @SerialName("added_on")
-    val addedOn: Int,
+    val addedOn: Double,
     @SerialName("amount_left")
     val amountLeft: Double,
     @SerialName("auto_tmm")
@@ -24,13 +24,13 @@ data class Torrent(
     @SerialName("dl_limit")
     val dlLimit: Int,
     @SerialName("dlspeed")
-    val downSpeed: Int,
+    val downSpeed: Double,
     @SerialName("download_path")
     val downloadPath: String,
     @SerialName("downloaded")
-    val downloaded: Long,
+    val downloaded: Double,
     @SerialName("downloaded_session")
-    val downloadedSession: Int,
+    val downloadedSession: Double,
     @SerialName("eta")
     val eta: Double,
     @SerialName("f_l_piece_prio")
@@ -46,15 +46,15 @@ data class Torrent(
     @SerialName("infohash_v2")
     val infoHashV2: String,
     @SerialName("last_activity")
-    val lastActivity: Int,
+    val lastActivity: Double,
     @SerialName("magnet_uri")
     val magnetUri: String,
     @SerialName("max_inactive_seeding_time")
-    val maxInactiveSeedingTime: Int,
+    val maxInactiveSeedingTime: Double,
     @SerialName("max_ratio")
     val maxRatio: Int,
     @SerialName("max_seeding_time")
-    val maxSeedingTime: Int,
+    val maxSeedingTime: Double,
     @SerialName("name")
     val name: String,
     @SerialName("num_complete")
@@ -78,7 +78,7 @@ data class Torrent(
     @SerialName("seeding_time")
     val seedingTime: Double,
     @SerialName("seeding_time_limit")
-    val seedingTimeLimit: Int,
+    val seedingTimeLimit: Double,
     @SerialName("seen_complete")
     val seenComplete: Int,
     @SerialName("seq_dl")
@@ -104,7 +104,7 @@ data class Torrent(
     @SerialName("uploaded")
     val uploaded: Long,
     @SerialName("uploaded_session")
-    val uploadedSession: Int,
+    val uploadedSession: Double,
     @SerialName("upspeed")
-    val upSpeed: Int
+    val upSpeed: Double
 )

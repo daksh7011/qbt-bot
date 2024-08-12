@@ -35,7 +35,7 @@ class TorrentInfo : Extension() {
                     .map { (category, torrents) ->
                         "Category: ${category.bold()}\n${
                             torrents.joinToString(separator = "\n") {
-                                "${it.name.substring(0, it.name.length.coerceAtMost(TORRENT_NAME_MAX_LENGTH))} is ${(it.progress * PROGRESS_FACTOR).round()}%"
+                                "${it.name.substring(0, it.name.length.coerceAtMost(TORRENT_NAME_MAX_LENGTH))} is at ${(it.progress * PROGRESS_FACTOR).round()}% and ${it.state}"
                             }
                         }"
                     }.joinToString(separator = "\n\n\n")
