@@ -16,8 +16,10 @@ import qbtbot.util.testGuild
 
 class TorrentInfo : Extension() {
 
-    private val progressFactor = 100
-    private val torrentNameMaxLength = 50
+    private companion object{
+        private const val PROGRESS_FACTOR = 100
+        private const val TORRENT_NAME_MAX_LENGTH = 50
+    }
 
     override val name: String = "Torrent Info"
 
@@ -39,7 +41,7 @@ class TorrentInfo : Extension() {
                     .map { (category, torrents) ->
                         "Category: ${category.bold()}\n${
                             torrents.joinToString(separator = "\n") {
-                                "${it.name.substring(0, it.name.length.coerceAtMost(torrentNameMaxLength))} is ${(it.progress * progressFactor).round()}%"
+                                "${it.name.substring(0, it.name.length.coerceAtMost(TORRENT_NAME_MAX_LENGTH))} is ${(it.progress * PROGRESS_FACTOR).round()}%"
                             }
                         }"
                     }.joinToString(separator = "\n\n\n")
