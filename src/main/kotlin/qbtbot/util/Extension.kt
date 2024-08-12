@@ -7,6 +7,7 @@ import dev.kord.core.Kord
 import dev.kord.core.entity.Message
 import dev.kord.rest.builder.message.EmbedBuilder
 import io.ktor.client.request.forms.submitForm
+import io.ktor.client.statement.HttpResponse
 import io.ktor.http.parameters
 import kotlin.math.round
 
@@ -28,16 +29,19 @@ fun String?.bold(): String = "**$this**"
 fun String?.italic(): String = "*$this*"
 
 suspend fun ExtensibleBot.loginToBackend() {
-    // try to log in to qBitTorrent
-    val response = httpClient.submitForm(
+    val response = requestQbitTorrentForLogin()
+    logger.info { "qBitTorrent login -> status: ${response.status}" }
+}
+
+suspend fun requestQbitTorrentForLogin(): HttpResponse =
+    // try to log in to qBitTorrent and save cookie
+    httpClient.submitForm(
         url = "$BASE_URL/auth/login",
         formParameters = parameters {
             append("username", env(Environment.USERNAME))
             append("password", env(Environment.PASSWORD))
         }
     )
-    logger.info { "qBitTorrent login -> status: ${response.status}" }
-}
 
 @Suppress("MagicNumber")
 fun Double.round(decimals: Int = 2): Double {
