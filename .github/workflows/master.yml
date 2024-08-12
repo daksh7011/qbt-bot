@@ -20,12 +20,12 @@ jobs:
         id: release_drafter
         uses: release-drafter/release-drafter@v6
         with:
-          disable-releaser: true
+          publish: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set version to env
-        run: echo "VERSION=$(echo ${{steps.release_drafter.outputs.tag_name}})" >> $GITHUB_ENV
+        run: echo "VERSION=$(echo ${{steps.release_drafter.outputs.name}})" >> $GITHUB_ENV
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -81,8 +81,6 @@ jobs:
       - name: Release Tag
         uses: softprops/action-gh-release@v2
         with:
-          repository: ${{github.repository}}
-          token: ${{ secrets.GITHUB_TOKEN }}
           body: ${{steps.release_drafter.outputs.body}}
           name: ${{steps.release_drafter.outputs.name}}
           tag_name: ${{steps.release_drafter.outputs.tag_name}}
