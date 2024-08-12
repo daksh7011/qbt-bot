@@ -15,12 +15,6 @@ import qbtbot.util.round
 import qbtbot.util.testGuild
 
 class TorrentInfo : Extension() {
-
-    private companion object{
-        private const val PROGRESS_FACTOR = 100
-        private const val TORRENT_NAME_MAX_LENGTH = 50
-    }
-
     override val name: String = "Torrent Info"
 
     override suspend fun setup() {
@@ -48,5 +42,10 @@ class TorrentInfo : Extension() {
                 message.respond(finalMessage)
             }
         }
+    }
+
+    private companion object {
+        private const val PROGRESS_FACTOR = 100
+        private const val TORRENT_NAME_MAX_LENGTH = 50
     }
 }
