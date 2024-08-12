@@ -42,6 +42,8 @@ repository:
 labels:
   - name: bug
     color: CC0000
+  - name: fix
+    color: D93F0B
   - name: feature
     color: 0E8A16
   - name: commands
@@ -53,10 +55,12 @@ labels:
   - name: maintenance
     color: 1D76DB
   - name: major
-    color: fbca04
+    color: FBCA04
   - name: minor
-    color: fbca04
+    color: FBCA04
   - name: patch
-    color: fbca04
+    color: FBCA04
+  - name: release
+    color: 0052CC
   - name: first-timers-only
     oldname: Help Wanted
