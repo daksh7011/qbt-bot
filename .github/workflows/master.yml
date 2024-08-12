@@ -19,8 +19,6 @@ jobs:
       - name: Release Drafter
         id: release_drafter
         uses: release-drafter/release-drafter@v6
-        with:
-          publish: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -78,13 +76,9 @@ jobs:
           outputs: |
             type=local,dest=.
 
-      - name: Release Tag
-        uses: softprops/action-gh-release@v2
+      - name: Upload Assets to Release
+        uses: shogo82148/actions-upload-release-asset@v1
         with:
-          body: ${{steps.release_drafter.outputs.body}}
-          name: ${{steps.release_drafter.outputs.name}}
-          tag_name: ${{steps.release_drafter.outputs.tag_name}}
-          generate_release_notes: false
-          make_latest: true
-          files: |
-            build/libs/*-all.jar
+          upload_url: ${{ steps.release_drafter.outputs.upload_url }}
+          asset_path: build/libs/*-all.jar
+          github_token: ${{ secrets.GITHUB_TOKEN }}
