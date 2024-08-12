@@ -9,6 +9,7 @@ categories:
   - title: '🐛 Bug Fixes'
     labels:
       - 'bug'
+      - 'fix'
   - title: '⬆️ Dependencies'
     labels:
       - 'dependencies'

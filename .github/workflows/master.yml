@@ -8,8 +8,8 @@ on:
 jobs:
   build-master:
     permissions:
-      contents: write
       pull-requests: write
+
     runs-on: ubuntu-latest
 
     steps:
@@ -75,6 +75,8 @@ jobs:
       - name: Release Tag
         uses: softprops/action-gh-release@v2
         with:
+          repository: ${{github.repository}}
+          token: ${{ secrets.GITHUB_TOKEN }}
           body: ${{steps.release_drafter.outputs.body}}
           name: ${{steps.release_drafter.outputs.name}}
           tag_name: ${{steps.release_drafter.outputs.tag_name}}
