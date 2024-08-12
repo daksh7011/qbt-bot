@@ -106,5 +106,5 @@ data class Torrent(
     @SerialName("uploaded_session")
     val uploadedSession: Double,
     @SerialName("upspeed")
-    val upSpeed: Int
+    val upSpeed: Double
 )
