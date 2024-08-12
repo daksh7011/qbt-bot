@@ -11,9 +11,10 @@ plugins {
     id("dev.kordex.gradle.docker")
     id("dev.kordex.gradle.kordex")
 }
+val projectVersion: String = (System.getenv("VERSION") ?: "").ifEmpty { "1.0" }
 
 group = "qbt-bot"
-version = "1.0"
+version = projectVersion
 
 dependencies {
     detektPlugins(libs.detekt)
