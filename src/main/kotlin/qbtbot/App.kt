@@ -1,18 +1,14 @@
 package qbtbot
 
-import com.kotlindiscord.kord.extensions.DISCORD_GREEN
-import com.kotlindiscord.kord.extensions.ExtensibleBot
-import com.kotlindiscord.kord.extensions.commands.events.PublicSlashCommandFailedChecksEvent
-import com.kotlindiscord.kord.extensions.commands.events.PublicSlashCommandFailedParsingEvent
-import com.kotlindiscord.kord.extensions.commands.events.PublicSlashCommandFailedWithExceptionEvent
-import com.kotlindiscord.kord.extensions.commands.events.PublicSlashCommandInvocationEvent
-import com.kotlindiscord.kord.extensions.commands.events.PublicSlashCommandSucceededEvent
-import com.kotlindiscord.kord.extensions.utils.env
-import com.kotlindiscord.kord.extensions.utils.getKoin
 import dev.kord.common.entity.PresenceStatus
 import dev.kord.core.event.gateway.DisconnectEvent
 import dev.kord.core.event.gateway.ReadyEvent
 import dev.kord.gateway.builder.Shards
+import dev.kordex.core.DISCORD_GREEN
+import dev.kordex.core.ExtensibleBot
+import dev.kordex.core.commands.events.*
+import dev.kordex.core.utils.env
+import dev.kordex.core.utils.getKoin
 import qbtbot.commands.TorrentInfo
 import qbtbot.util.Environment
 import qbtbot.util.PresenceManager
