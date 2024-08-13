@@ -1,11 +1,11 @@
 package qbtbot.util
 
-import com.kotlindiscord.kord.extensions.ExtensibleBot
-import com.kotlindiscord.kord.extensions.utils.env
 import dev.kord.common.entity.Snowflake
 import dev.kord.core.Kord
 import dev.kord.core.entity.Message
 import dev.kord.rest.builder.message.EmbedBuilder
+import dev.kordex.core.ExtensibleBot
+import dev.kordex.core.utils.env
 import io.ktor.client.request.forms.submitForm
 import io.ktor.client.statement.HttpResponse
 import io.ktor.http.parameters
