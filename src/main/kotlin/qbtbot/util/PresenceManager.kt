@@ -1,8 +1,8 @@
 package qbtbot.util
 
-import com.kotlindiscord.kord.extensions.utils.scheduling.Scheduler
 import dev.kord.core.Kord
 import dev.kord.gateway.builder.PresenceBuilder
+import dev.kordex.core.utils.scheduling.Scheduler
 import kotlinx.coroutines.flow.count
 import org.koin.core.component.KoinComponent
 import kotlin.math.floor

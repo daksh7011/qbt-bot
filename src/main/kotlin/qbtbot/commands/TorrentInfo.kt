@@ -1,8 +1,8 @@
 package qbtbot.commands
 
-import com.kotlindiscord.kord.extensions.extensions.Extension
-import com.kotlindiscord.kord.extensions.extensions.chatCommand
-import com.kotlindiscord.kord.extensions.utils.respond
+import dev.kordex.core.extensions.Extension
+import dev.kordex.core.extensions.chatCommand
+import dev.kordex.core.utils.respond
 import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.http.HttpStatusCode
