@@ -1,4 +1,4 @@
-name: Build Develop & Publish
+name: Build Develop & Generate artifacts
 
 on:
   push:
