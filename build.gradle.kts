@@ -31,9 +31,11 @@ dependencies {
 }
 
 kordEx {
+    ignoreIncompatibleKotlinVersion = true
     bot {
         // See https://docs.kordex.dev/data-collection.html
         dataCollection(DataCollection.None)
+
 
         mainClass = "qbtbot.AppKt"
     }
