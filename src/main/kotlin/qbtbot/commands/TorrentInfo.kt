@@ -39,7 +39,8 @@ class TorrentInfo : Extension() {
                             }
                         }"
                     }.joinToString(separator = "\n\n\n")
-                message.respond(finalMessage)
+                val finalMessageList: List<String> = finalMessage.chunked(MESSAGE_MAX_LENGTH)
+                finalMessageList.forEach { message.respond(it) }
             }
         }
     }
@@ -47,5 +48,6 @@ class TorrentInfo : Extension() {
     private companion object {
         private const val PROGRESS_FACTOR = 100
         private const val TORRENT_NAME_MAX_LENGTH = 50
+        private const val MESSAGE_MAX_LENGTH = 1900
     }
 }
