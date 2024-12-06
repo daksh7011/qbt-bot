@@ -28,9 +28,6 @@ dependencies {
     implementation(libs.logback)
     implementation(libs.logback.groovy)
     implementation(libs.logging)
-
-    // TODO: use it once the latest version is available on sonatype again
-//    implementation(libs.doc.generator)
 }
 
 kordEx {
