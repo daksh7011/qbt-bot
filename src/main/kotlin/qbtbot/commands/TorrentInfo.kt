@@ -2,6 +2,7 @@ package qbtbot.commands
 
 import dev.kordex.core.extensions.Extension
 import dev.kordex.core.extensions.chatCommand
+import dev.kordex.core.i18n.toKey
 import dev.kordex.core.utils.respond
 import io.ktor.client.call.body
 import io.ktor.client.request.get
@@ -19,8 +20,8 @@ class TorrentInfo : Extension() {
 
     override suspend fun setup() {
         chatCommand {
-            name = "torrents"
-            description = "Get information of available torrents"
+            name = "torrents".toKey()
+            description = "Get information of available torrents".toKey()
             check { failIf(event.message.author == null) }
             check { failIf(event.message.getGuild().id != testGuild) }
             action {
